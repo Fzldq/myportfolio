@@ -1,3 +1,4 @@
 models/segmentation.pkl
 models/classifier.pkl
 tmp.png
+__pycache__/

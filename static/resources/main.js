@@ -3,6 +3,7 @@ var mainOutput2 = $('#output2');
 
 function monitorFileChange() {
     $('#predict').click(function () {
+        mainOutput1.html('')
         var radios = document.getElementsByName("model");
         for (var i = 0, length = radios.length; i < length; i++) {
             if (radios[i].checked) {
@@ -12,10 +13,7 @@ function monitorFileChange() {
                     data: {
                         checked: checked,
                     },
-                    type: 'GET',
-                    success: function (data) {
-                        console.log(data)
-                    }
+                    type: 'GET'
                 });
                 break;
             }
@@ -48,6 +46,9 @@ function GetUrl(u) {
             url: u,
         },
         type: 'GET',
+        beforeSend: function () {
+            mainOutput2.html('waiting...')
+        },
         success: function (data) {
             if (data.signal == 1) {
                 console.log(data)
@@ -58,7 +59,7 @@ function GetUrl(u) {
             }
             else if (data.signal == 2) {
                 console.log(data)
-               mainOutput2.html("<img  src=\"data:;base64,"+data.img_stream+"\">")
+                mainOutput2.html("<img  src=\"data:;base64," + data.img_stream + "\">")
             }
         }
     })
@@ -70,7 +71,6 @@ function GetFile(f) {
     readfile.onload = function (e) {
         var image = new Image();
         image.src = this.result
-        console.log(this.result)
         mainOutput1.html(image)
     }
     var formData = new FormData();
@@ -82,6 +82,9 @@ function GetFile(f) {
         processData: false,
         contentType: false,
         type: 'POST',
+        beforeSend: function () {
+            mainOutput2.html('waiting...')
+        },
         success: function (data) {
             if (data.signal == 1) {
                 console.log(data)
@@ -92,7 +95,7 @@ function GetFile(f) {
             }
             else if (data.signal == 2) {
                 console.log(data)
-               mainOutput2.html("<img  src=\"data:;base64,"+data.img_stream+"\">")
+                mainOutput2.html("<img  src=\"data:;base64," + data.img_stream + "\">")
             }
         }
     })
