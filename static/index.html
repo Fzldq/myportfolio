@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my portfolio</title>
+
+</head>
+
+<body>
+    <h2>my portfolio</h2>
+    <div>
+        <form>
+            <input name="model" type="radio" value="classifier " checked="true" />classifier(<a href="http://www.robots.ox.ac.uk/~vgg/data/pets/">Oxford-IIIT Pet</a>)
+            <input name="model" type="radio" value="segmentation" />segmentation(<a href="http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/">Camvid</a>)
+        </form>
+    </div>
+    <div>
+        <h3>provide a url</h3>
+    </div>
+    <div><input id="url" name="file" type="text" class="form-control" value=""></div>
+    <div>
+        <h3>or</h3>
+    </div>
+    <input id="uploadFileElem" type="file" accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp" />
+    <br /><br />
+    <button id="predict" type="predict">predict</button>
+    <div class="main-screen" id="output1">your photo </div>
+    <div class="sub-screen" id="output2"> </div>
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="resources/main.js"></script>
+</body>
+
+</html>
