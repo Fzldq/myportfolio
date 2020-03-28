@@ -1,15 +1,13 @@
 from fastai.vision import *
-import fastai
 import sys
-from io import BytesIO
 import os
 import flask
 from flask import Flask
-import json
 from predict import *
 
 app = Flask(__name__)
 tmp = {}
+
 
 @app.route('/_predict', methods=['POST', 'GET'])
 def upload_file():
@@ -23,7 +21,7 @@ def upload_file():
         res = classifier_predict(img)
     else:
         res = segmentation_predict(img)
-    res['checked']=str(tmp["checked"])
+    res['checked'] = str(tmp["checked"])
     return flask.jsonify(res)
 
 
@@ -31,6 +29,7 @@ def upload_file():
 def check():
     tmp["checked"] = flask.request.args.get("checked").replace(" ", "")
     return tmp["checked"]
+
 
 @app.after_request
 def add_header(response):

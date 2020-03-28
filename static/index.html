@@ -4,32 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/custom.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
     <title>my portfolio</title>
-
 </head>
 
 <body>
-    <h2>my portfolio</h2>
+    <div>
+        <h2>A Simple Web App for Image Recognition</h2>
+    </div>
+    <div><a href="https://github.com/zcr1992/myportfolio" target="_blank">Description for this App</a></div>
+    <br></br>
     <div>
         <form>
-            <input name="model" type="radio" value="classifier " checked="true" />classifier(<a href="http://www.robots.ox.ac.uk/~vgg/data/pets/">Oxford-IIIT Pet</a>)
-            <input name="model" type="radio" value="segmentation" />segmentation(<a href="http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/">Camvid</a>)
+            <div>
+                <input name="model" id="classifier" type="radio" value="classifier " checked="true" />classifier(<a
+                    href="http://www.robots.ox.ac.uk/~vgg/data/pets/" target="_blank">Oxford-IIIT Pet</a>)
+                <input name="model" id="segmentation" type="radio" value="segmentation" />segmentation(<a
+                    href="http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/" target="_blank">Camvid</a>)
+            </div>
         </form>
     </div>
     <div>
-        <h3>provide a url</h3>
+        <h3>Provide a Url</h3>
+    </div>
+    <div><button id="sample"
+            onclick="document.all.child1.style.display=(document.all.child1.style.display =='none')?'':'none'">
+            + Sample Url </div>
+    <div id="child1" style="display:none">
+        <div>
+            <button id="sample1" onclick="document.all.url.value=this.value
+    document.all.classifier.checked=true" type="sample" style="margin-left:10px"
+                value="https://images-na.ssl-images-amazon.com/images/I/71xVYafTryL.jpg">- Sample1: Siamese
+                Cat(classifier)</button>
+        </div>
+        <div>
+            <button id="sample2" onclick="document.all.url.value=this.value
+    document.all.classifier.checked=true" type="sample" style="margin-left:10px"
+                value="https://s3.amazonaws.com/Yuji/calendarimages/2020/pp086_MED.jpg">- Sample2: Pug
+                Dog(classifier)</button></div>
+        <div>
+            <button id="sample3" onclick="document.all.url.value=this.value
+    document.all.segmentation.checked=true" style="margin-left:10px"
+                value="https://raw.githubusercontent.com/ndrplz/dilation-tensorflow/master/data/camvid.png">- Sample3: Sample
+                Streetscape(segmentation)</button>
+        </div>
     </div>
     <div><input id="url" name="file" type="text" class="form-control" value=""></div>
     <div>
-        <h3>or</h3>
+        <h3>or Upload Your File</h3>
     </div>
     <input id="uploadFileElem" type="file" accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp" />
-    <br /><br />
-    <button id="predict" type="predict">predict</button>
-    <div class="main-screen" id="output1">your photo </div>
-    <div class="sub-screen" id="output2"> </div>
-    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-    <script src="resources/main.js"></script>
+    <br></br>
+    <div>
+        <button id="predict" type="predict">predict</button>
+        <button id="clear" type="clear">clear</button>
+    </div>
+    <div class="main-screen" id="output1"><img class="img-show">your photo</img></div>
+    <div class="sub-screen" id="output2" ></div>
+    <br></br>
+    <div>Made by <a href="https://github.com/zcr1992/" target="_blank">zcr1992</a>.</div>
 </body>
 
 </html>
