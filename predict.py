@@ -41,7 +41,7 @@ def classifier_predict(img, n: int = 3) -> Dict[str, Union[str, List]]:
 def segmentation_predict(img) -> Dict[str, Union[str, List]]:
     model = load_model('models', file="segmentation.pkl")
     pred = model.predict(img)[0]
-    img.resize((3, 360, 480)).show(y=pred, figsize=(480 / 50, 360 / 50))
+    pred.resize((1, 360, 480)).show(figsize=(480 / 50, 360 / 50), alpha=1)
     plt.gca().xaxis.set_major_locator(plt.NullLocator())
     plt.gca().yaxis.set_major_locator(plt.NullLocator())
     plt.subplots_adjust(top=1, bottom=0, left=0, right=1, hspace=0, wspace=0)

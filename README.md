@@ -11,9 +11,12 @@ The following were used for model **deployment**:
 - Flask
 
 Examples:
-- classifier([Oxford-IIIT Pet](http://www.robots.ox.ac.uk/~vgg/data/pets))
-- segmentation([Camvid](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/))
-- ...
+- Classifier([Oxford-IIIT Pet](http://www.robots.ox.ac.uk/~vgg/data/pets)):    
+[Notebook1](notebooks/Classifier/pets.ipynb)  
+[Notebook2](notebooks/Classifier/pets-more.ipynb)
+- Segmentation([Camvid](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/)):    
+[Notebook](notebooks/Segmentation/Camvid.ipynb)
+- ...(To be added)
 
 
 
