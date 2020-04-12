@@ -1,10 +1,14 @@
 .gcloudignore
 .git
 .gitignore
- tmp.png
- README.md
- LICENSE
- notebooks/
+tmp.png
+README.md
+LICENSE
+notebooks/
 
 # Python pycache:
 __pycache__/
+# Ignored by the build system
+/setup.cfg
+
+venv
