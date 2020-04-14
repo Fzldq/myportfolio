@@ -1,4 +1,5 @@
 models/segmentation.pkl
 models/classifier.pkl
+**/.ipynb_checkpoints
 tmp.png
 __pycache__/
