@@ -12,11 +12,15 @@ The following were used for model **deployment**:
 
 Examples:
 - Classifier([Oxford-IIIT Pet](http://www.robots.ox.ac.uk/~vgg/data/pets)):    
+Recognize 37 categories of pets using ResNet50 with 4% error-rate. Can't do Multi-label.  
 [Notebook1](notebooks/Classifier/pets.ipynb)  
 [Notebook2](notebooks/Classifier/pets-more.ipynb)
-- Segmentation([Camvid](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/)):    
+
+- Segmentation([Camvid](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/)):   
+Segmentation for Camvid video using U-net+ResNet34 with 8% error-rate. But perfromance was not good when I used my own photos. Still have a lot to learn.   
 [Notebook](notebooks/Segmentation/Camvid.ipynb)
-- ...(To be added)
+
+- To be added: Classification & Localization using newer models
 
 
 
